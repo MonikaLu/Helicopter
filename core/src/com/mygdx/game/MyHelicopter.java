@@ -8,6 +8,9 @@ import com.badlogic.gdx.utils.ScreenUtils;
 public class MyHelicopter extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
+
+	public static final int WIDTH = 480;
+	public static final int HEIGHT = 800;
 	
 	@Override
 	public void create () {
@@ -18,11 +21,15 @@ public class MyHelicopter extends ApplicationAdapter {
 	@Override
 	public void render () {
 		ScreenUtils.clear(1, 0, 0, 1);
-		batch.begin();
-		batch.draw(img, 100, 50);
-		batch.end();
+		for (int i = 0; i < 100; i++) {
+			batch.begin();
+			batch.draw(img, i, i);
+			batch.end();
+		}
+
 	}
-	
+
+
 	@Override
 	public void dispose () {
 		batch.dispose();
