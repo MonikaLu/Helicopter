@@ -1,43 +1,73 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.ScreenUtils;
 
-public class MyHelicopter extends State implements ApplicationListener {
+//Inspirert av https://www.youtube.com/watch?v=WTcdgIkzBRk&ab_channel=BipedPotato
+//og https://www.youtube.com/watch?v=gR88EZEXEQg&ab_channel=BrentAureliCodes
+
+public class MyHelicopter extends ApplicationAdapter {
 	SpriteBatch batch;
-	int direction = 1;
+	int direction = -1;
 
 	public static final int WIDTH = 480;
 	public static final int HEIGHT = 800;
+
+	int screenHeight = HEIGHT;
+	int screenWidth = WIDTH;
 	private HelicopterSprite helicopterSprite;
 
 	@Override
-	public void create () {
-		batch = new SpriteBatch();
-	helicopterSprite = new HelicopterSprite(100, 100);
+	public void create ()
+	{batch = new SpriteBatch();
+	helicopterSprite = new HelicopterSprite(screenWidth/2, screenHeight/2);
 	}
-
 	@Override
 	public void resize(int width, int height) {
-
+		screenWidth = width;
+		screenHeight = height;
 	}
 
 	@Override
 	public void render () {
-		ScreenUtils.clear(1, 1, 1, 1);
+		ScreenUtils.clear(0, 1, 1, 1);
 		batch.begin();
-		batch.draw(helicopterSprite.getHelicopter(), helicopterSprite.getPosition().x, helicopterSprite.getPosition().y);
+		batch.draw(helicopterSprite.getHelicopter(), helicopterSprite.getPosition().x, helicopterSprite.getPosition().y,
+				helicopterSprite.getHelicopter().getRegionWidth(), helicopterSprite.getHelicopter().getRegionHeight());
 		batch.end();
+		helicopterSprite.anim.update(Gdx.graphics.getDeltaTime());
 
 		helicopterSprite.getPosition().x += direction * 200 * Gdx.graphics.getDeltaTime();
-		if (helicopterSprite.getPosition().x >= WIDTH-helicopterSprite.getHelicopter().getWidth()) {
+		if (helicopterSprite.getPosition().x >= screenWidth-helicopterSprite.getHelicopter().getRegionWidth()) {
 			direction = -1;
+			for (TextureRegion reg : helicopterSprite.anim.getFrames()) {
+				if (reg.isFlipX()) {
+					reg.flip(true, false);
+				}
+			}
+
+		//	helicopterSprite.getHelicopter().flip(true, false);
 		}
-		if (helicopterSprite.getPosition().x < 1) {
+		else if (helicopterSprite.getPosition().x < 0) {
 			direction = 1;
+			for (TextureRegion reg : helicopterSprite.anim.getFrames()) {
+				if (!reg.isFlipX()) {
+					reg.flip(true, false);
+				}
+
+			}
+			//helicopterSprite.getHelicopter().flip(true, false);
 		}
+	}
+
+
+	public void update(float dt){
+		System.out.println("I am updated");
 	}
 
 
@@ -45,6 +75,7 @@ public class MyHelicopter extends State implements ApplicationListener {
 	public void pause() {
 
 	}
+	
 
 	@Override
 	public void resume() {
