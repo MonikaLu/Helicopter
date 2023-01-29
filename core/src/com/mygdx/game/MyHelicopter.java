@@ -25,6 +25,9 @@ public class MyHelicopter extends State implements ApplicationListener {
 	int screenHeight = HEIGHT;
 	int screenWidth = WIDTH;
 
+	float touchPositionX;
+	float touchPositionY;
+
 	private HelicopterSprite helicopterSprite;
 
 	@Override
@@ -47,11 +50,23 @@ public class MyHelicopter extends State implements ApplicationListener {
 		if (Gdx.input.justTouched()) {
 			if (Gdx.input.getX() <= helicopterSprite.getHelicopter().getWidth()) {
 				helicopterSprite.getPosition().x = 0;
-			}
-			else if (Gdx.input.getX() >= screenWidth-helicopterSprite.getHelicopter().getWidth()) {
+				touchPositionX = Gdx.input.getX();
+			} else if (Gdx.input.getX() >= screenWidth-helicopterSprite.getHelicopter().getWidth()) {
+				touchPositionX = Gdx.input.getX();
 				helicopterSprite.getPosition().x = screenWidth-helicopterSprite.getHelicopter().getWidth();
 			} else {
 				helicopterSprite.getPosition().x = (Gdx.input.getX() - (helicopterSprite.getHelicopter().getWidth()/2));
+				touchPositionX = Gdx.input.getX();
+			}
+
+			if (Gdx.input.getY() <= helicopterSprite.getHelicopter().getHeight()) {
+				helicopterSprite.getPosition().y = screenHeight-helicopterSprite.getHelicopter().getHeight();
+				touchPositionY = Gdx.input.getY();
+			} else if (Gdx.input.getY() <= screenHeight - helicopterSprite.getHelicopter().getHeight()) {
+				helicopterSprite.getPosition().y = screenHeight - (Gdx.input.getY() + (helicopterSprite.getHelicopter().getHeight()/2));
+				touchPositionY = Gdx.input.getY();
+			} else {
+				helicopterSprite.getPosition().y = 0;
 			}
 		//	helicopterSprite.getPosition().x = Gdx.input.getX() - (helicopterSprite.getHelicopter().getWidth()/2);
 		//	helicopterSprite.getPosition().y = screenHeight - (Gdx.input.getY() + helicopterSprite.getHelicopter().getHeight()/2);
@@ -72,7 +87,8 @@ public class MyHelicopter extends State implements ApplicationListener {
 		batch.begin();
 		handleInput();
 		batch.draw(helicopterSprite.getHelicopter(), helicopterSprite.getPosition().x, helicopterSprite.getPosition().y);
-		font.draw(batch, "Sprite Position: " + helicopterSprite.getPosition().x + ", " + helicopterSprite.getPosition().y ,
+		font.draw(batch, "Sprite Position: " + helicopterSprite.getPosition().x + ", " + helicopterSprite.getPosition().y + "\n" +
+						"Screen Coordinates: " + touchPositionX + ", " + touchPositionY,
 				20, screenHeight-100);
 		font.getData().setScale(3, 3);
 		batch.end();
