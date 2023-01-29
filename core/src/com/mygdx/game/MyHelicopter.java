@@ -26,14 +26,11 @@ public class MyHelicopter extends State implements ApplicationListener {
 	int screenWidth = WIDTH;
 
 	private HelicopterSprite helicopterSprite;
-	//OrthographicCamera camera;
-	//ExtendViewport vp;
 
 	@Override
 	public void create ()
 	{
-		//camera = new OrthographicCamera();
-		//vp = new ExtendViewport(1080, 2214, camera);
+
 		batch = new SpriteBatch();
 	helicopterSprite = new HelicopterSprite(screenWidth/2, screenHeight/2);
 	font = new BitmapFont();
@@ -41,8 +38,6 @@ public class MyHelicopter extends State implements ApplicationListener {
 	}
 	@Override
 	public void resize(int width, int height) {
-	//vp.update(width, height);
-	//batch.setProjectionMatrix(camera.combined);
 	screenWidth = width;
 	screenHeight = height;
 	}
@@ -50,8 +45,16 @@ public class MyHelicopter extends State implements ApplicationListener {
 	@Override
 	public void handleInput() {
 		if (Gdx.input.justTouched()) {
-			helicopterSprite.getPosition().x = Gdx.input.getX() - (helicopterSprite.getHelicopter().getWidth()/2);
-			helicopterSprite.getPosition().y = screenHeight - (Gdx.input.getY() + helicopterSprite.getHelicopter().getHeight()/2);
+			if (Gdx.input.getX() <= helicopterSprite.getHelicopter().getWidth()) {
+				helicopterSprite.getPosition().x = 0;
+			}
+			else if (Gdx.input.getX() >= screenWidth-helicopterSprite.getHelicopter().getWidth()) {
+				helicopterSprite.getPosition().x = screenWidth-helicopterSprite.getHelicopter().getWidth();
+			} else {
+				helicopterSprite.getPosition().x = (Gdx.input.getX() - (helicopterSprite.getHelicopter().getWidth()/2));
+			}
+		//	helicopterSprite.getPosition().x = Gdx.input.getX() - (helicopterSprite.getHelicopter().getWidth()/2);
+		//	helicopterSprite.getPosition().y = screenHeight - (Gdx.input.getY() + helicopterSprite.getHelicopter().getHeight()/2);
 		/*	if (Gdx.input.getX() > (helicopterSprite.getHelicopter().getWidth()/2) && Gdx.input.getX() < screenWidth - (helicopterSprite.getHelicopter().getWidth()/2)){
 				if (Gdx.input.getY() >= helicopterSprite.getHelicopter().getHeight( )|| Gdx.input.getY() < screenHeight - helicopterSprite.getHelicopter().getHeight()) {
 					helicopterSprite.getPosition().y = screenHeight - (Gdx.input.getY() +( helicopterSprite.getHelicopter().getHeight() / 2));
@@ -68,7 +71,7 @@ public class MyHelicopter extends State implements ApplicationListener {
 
 		batch.begin();
 		handleInput();
-		batch.draw(helicopterSprite.getHelicopter(), helicopterSprite.getPosition().x, helicopterSprite.getPosition().y, 420, 200);
+		batch.draw(helicopterSprite.getHelicopter(), helicopterSprite.getPosition().x, helicopterSprite.getPosition().y);
 		font.draw(batch, "Sprite Position: " + helicopterSprite.getPosition().x + ", " + helicopterSprite.getPosition().y ,
 				20, screenHeight-100);
 		font.getData().setScale(3, 3);
