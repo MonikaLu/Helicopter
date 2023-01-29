@@ -10,7 +10,7 @@ public class HelicopterSprite {
 
     public HelicopterSprite(int x, int y) {
         position = new Vector3(x, y, 0f);
-        helicopter = new Texture("attackhelicopter.png");
+        helicopter = new Texture("attackhelicopter.PNG");
         newHelicopter = new Sprite(helicopter);
     }
 
