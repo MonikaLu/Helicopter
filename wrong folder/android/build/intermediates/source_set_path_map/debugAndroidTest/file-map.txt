@@ -1,0 +1,7 @@
+com.mygdx.game.test.android-androidTest-0 /Users/monikaluu/StudioProjects/test/android/build/generated/res/resValues/androidTest/debug
+com.mygdx.game.test.android-androidTest-1 /Users/monikaluu/StudioProjects/test/android/build/generated/res/rs/androidTest/debug
+com.mygdx.game.test.android-mergeDebugAndroidTestResources-2 /Users/monikaluu/StudioProjects/test/android/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.mygdx.game.test.android-mergeDebugAndroidTestResources-3 /Users/monikaluu/StudioProjects/test/android/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.mygdx.game.test.android-merged_res-4 /Users/monikaluu/StudioProjects/test/android/build/intermediates/merged_res/debugAndroidTest
+com.mygdx.game.test.android-androidTest-5 /Users/monikaluu/StudioProjects/test/android/src/androidTest/res
+com.mygdx.game.test.android-androidTestDebug-6 /Users/monikaluu/StudioProjects/test/android/src/androidTestDebug/res

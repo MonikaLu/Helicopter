@@ -1,0 +1,18 @@
+<lint-module
+    format="1"
+    dir="/Users/monikaluu/StudioProjects/test/android"
+    name=":android"
+    type="APP"
+    maven="test:android:"
+    gradle="7.4.0"
+    buildFolder="build"
+    bootClassPath="/Users/monikaluu/Library/Android/sdk/platforms/android-33/android.jar:/Users/monikaluu/Library/Android/sdk/build-tools/33.0.1/core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-33">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>

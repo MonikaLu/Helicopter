@@ -1,0 +1,8 @@
+com.mygdx.game.android-pngs-0 /Users/monikaluu/StudioProjects/test/android/build/generated/res/pngs/release
+com.mygdx.game.android-resValues-1 /Users/monikaluu/StudioProjects/test/android/build/generated/res/resValues/release
+com.mygdx.game.android-rs-2 /Users/monikaluu/StudioProjects/test/android/build/generated/res/rs/release
+com.mygdx.game.android-mergeReleaseResources-3 /Users/monikaluu/StudioProjects/test/android/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.mygdx.game.android-mergeReleaseResources-4 /Users/monikaluu/StudioProjects/test/android/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.mygdx.game.android-merged_res-5 /Users/monikaluu/StudioProjects/test/android/build/intermediates/merged_res/release
+com.mygdx.game.android-android-6 /Users/monikaluu/StudioProjects/test/android/res
+com.mygdx.game.android-release-7 /Users/monikaluu/StudioProjects/test/android/src/release/res

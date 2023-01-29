@@ -1,0 +1,1 @@
+/Users/monikaluu/StudioProjects/o1/test/task3/core/build/classes/java/main/com/mygdx/game/HelicopterSprite.class:/Users/monikaluu/StudioProjects/o1/test/task3/core/build/classes/java/main/com/mygdx/game/MyHelicopter.class:/Users/monikaluu/StudioProjects/o1/test/task3/core/build/classes/java/main/com/mygdx/game/State.class

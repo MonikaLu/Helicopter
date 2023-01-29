@@ -1,0 +1,30 @@
+<libraries>
+  <library
+      name="com.badlogicgames.gdx:gdx-backend-android:1.11.0@jar"
+      jars="/Users/monikaluu/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-android/1.11.0/f6e321f1aced1706402c4ebd7ddd55526dabc572/gdx-backend-android-1.11.0.jar"
+      resolved="com.badlogicgames.gdx:gdx-backend-android:1.11.0"/>
+  <library
+      name="/Users/monikaluu/StudioProjects/test@@:core"
+      jars="/Users/monikaluu/StudioProjects/test/core/build/libs/core-1.0.jar"
+      resolved="::"/>
+  <library
+      name="org.jetbrains.kotlin:kotlin-stdlib:1.6.21@jar"
+      jars="/Users/monikaluu/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.6.21/11ef67f1900634fd951bad28c53ec957fabbe5b8/kotlin-stdlib-1.6.21.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib:1.6.21"/>
+  <library
+      name="com.badlogicgames.gdx:gdx:1.11.0@jar"
+      jars="/Users/monikaluu/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.11.0/ffe1206d1004cd9e40027e28964be0fea0399af7/gdx-1.11.0.jar"
+      resolved="com.badlogicgames.gdx:gdx:1.11.0"/>
+  <library
+      name="com.badlogicgames.gdx:gdx-jnigen-loader:2.3.1@jar"
+      jars="/Users/monikaluu/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-jnigen-loader/2.3.1/2d472f69243631fbcb3d4c3f93dd2e137a6cb084/gdx-jnigen-loader-2.3.1.jar"
+      resolved="com.badlogicgames.gdx:gdx-jnigen-loader:2.3.1"/>
+  <library
+      name="org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21@jar"
+      jars="/Users/monikaluu/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.6.21/5e5b55c26dbc80372a920aef60eb774b714559b8/kotlin-stdlib-common-1.6.21.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21"/>
+  <library
+      name="org.jetbrains:annotations:13.0@jar"
+      jars="/Users/monikaluu/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar"
+      resolved="org.jetbrains:annotations:13.0"/>
+</libraries>

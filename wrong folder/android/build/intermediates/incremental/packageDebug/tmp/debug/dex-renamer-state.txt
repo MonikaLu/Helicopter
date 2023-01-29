@@ -1,0 +1,4 @@
+#Sun Jan 29 17:49:38 CET 2023
+base.0=/Users/monikaluu/StudioProjects/o1/test/task3/android/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
