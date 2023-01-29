@@ -11,11 +11,6 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class MyHelicopter extends State implements ApplicationListener {
 	SpriteBatch batch;
-	int directionX = -1;
-	int directionY = -1;
-
-	float touchPositionX;
-	float touchPositionY;
 
 	public static final int WIDTH = 480;
 	public static final int HEIGHT = 800;
@@ -35,13 +30,13 @@ public class MyHelicopter extends State implements ApplicationListener {
 	@Override
 	public void handleInput() {
 		if (Gdx.input.justTouched()) {
-			if (Gdx.input.getX() >= helicopterSprite.getHelicopter().getWidth() || Gdx.input.getX() < WIDTH - helicopterSprite.getHelicopter().getWidth()){
-				helicopterSprite.getPosition().x = (Gdx.input.getX() - (helicopterSprite.getHelicopter().getWidth()/2));
+			if (Gdx.input.getX() > (helicopterSprite.getHelicopter().getWidth()/2) && Gdx.input.getX() < WIDTH - (helicopterSprite.getHelicopter().getWidth()/2)){
+				if (Gdx.input.getY() >= helicopterSprite.getHelicopter().getHeight( )|| Gdx.input.getY() < HEIGHT - helicopterSprite.getHelicopter().getHeight()) {
+					helicopterSprite.getPosition().y =HEIGHT - (Gdx.input.getY() +( helicopterSprite.getHelicopter().getHeight() / 2));
+					helicopterSprite.getPosition().x = (Gdx.input.getX() - (helicopterSprite.getHelicopter().getWidth()/2));
+				}
 			}
-			if (Gdx.input.getY() >= helicopterSprite.getHelicopter().getHeight( )|| Gdx.input.getY() < HEIGHT - helicopterSprite.getHelicopter().getHeight()) {
-				// touchPositionY = (Gdx.input.getY() - (helicopterSprite.getHelicopter().getHeight()/2));
-				helicopterSprite.getPosition().y =HEIGHT - (Gdx.input.getY() +( helicopterSprite.getHelicopter().getHeight() / 2));
-			}
+
 		}
 	}
 
